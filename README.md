@@ -38,7 +38,7 @@ If you use this source code, please cite article:
 
 ------------------------------------------------------------------------
 
-## Organization {#organization}
+## Organization
 
 - `in`: folder containing all the input data files.
   - `carto`folder containing the input shapefiles.
@@ -63,13 +63,13 @@ If you use this source code, please cite article:
       * `listing_features_data_SL.R`: `R`script to process SeLoger dataset.
   - `serious_search`: `R` scripts for the analysis of serious search.
 
-## Installation {#installation}
+## Installation
 
 ### R and Packages
 
 ### Data
 
-## Use {#use}
+## Use
 
 ### To Replicate the Paper Experiments
 
@@ -83,6 +83,6 @@ If you use this source code, please cite article:
 
 #### Processing
 
-## Dependencies {#dependencies}
+## Dependencies
 
-## References {#references}
+## References
