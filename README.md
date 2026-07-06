@@ -1,10 +1,9 @@
-+------------------------------------------------------------+
-|                                                            |
-+============================================================+
-| # **Serious Search Identification in User-generated data** |
-|                                                            |
-| Copyright 2026                                             |
-+------------------------------------------------------------+
+                                                            
+
+ # **Serious Search Identification in User-generated data** 
+                                                            
+ Copyright 2026                                             
+------------------------------------------------------------------------
 
 This is the R code that helped process data and produce all results and plots in the document *'**Who is Serious? A novel behavioral approach for identifying serious search on online real estate platforms**'* ([link to the document will be provided once it's published](link%20to%20the%20doc%20will%20be%20added%20once%20it's%20published))
 
