@@ -40,9 +40,9 @@ If you use this source code, please cite article:
 
 ## Organization
 
-- `in`: folder containing all the input data files.
-  - `carto`folder containing the input shapefiles.
-  - `extern_data`: folder containing the external datasets for variables corrections.
+- `data`: folder containing all the input data files.
+  - `events.parquet`: dataset of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : "fullvisitorid" (user ID); "id_listing" (listing ID); "datetime" (date and time of view);  "visitid" (view ID in the dataset);  "is_logged" (indication of wether the user was logged while viewing the listing).
+  - `features`: dataset of every single listings' features. This table contains colums : "id_listing" (listing ID); "price" (property price); "area" (property area); "room_count" (property room count); "fct_room_count" (property room count set to factor variable); "sqm_price" (property square meter price); "item_type" (property type, wether a house or appartment); 
   - `raw`: folder containing the raw datasets (listings' features and events' datasets).
 - `out`: folder containing the outputs of the processing.
   - `pdf`: pdf files.
