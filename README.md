@@ -41,9 +41,9 @@ If you use this source code, please cite article:
 ## Organization
 
 - `data`: folder containing all the input data files.
-  - `events.parquet`: dataset of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : "fullvisitorid" (user ID); "id_listing" (listing ID); "datetime" (date and time of view);  "visitid" (view ID in the dataset);  "is_logged" (indication of wether the user was logged while viewing the listing).
-  - `features`: dataset of every single listings' features. This table contains colums : "id_listing" (listing ID); "price" (property price); "area" (property area); "room_count" (property room count); "fct_room_count" (property room count set to factor variable); "sqm_price" (property square meter price); "item_type" (property type, wether a house or appartment); 
-  - `raw`: folder containing the raw datasets (listings' features and events' datasets).
+  - `events.parquet`: dataset  (in parquet format) of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : "fullvisitorid" (user ID); "id_listing" (listing ID); "datetime" (date and time of view);  "visitid" (view ID in the dataset);  "is_logged" (indication of wether the user was logged while viewing the listing).
+  - `features.gpkg`: dataset (in gpkg format) of every single listings' features. This table contains colums : "id_listing" (listing ID); "price" (property price); "area" (property area); "room_count" (property room count); "fct_room_count" (property room count set to factor variable); "sqm_price" (property square meter price); "item_type" (property type, wether a house or appartment);
+  - `mail_phone.parquet`: a dataset (in parquet format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : "fullvisitorid" (user ID); "id_listing" (listing ID); "datetime" (date and time of view); "visitid" (view ID in the dataset); "event_action" (indication of the contact action a user made : displaying a phone number or submiting a mail form); "is_logged" (indication of wether the user was logged while viewing the listing). 
 - `out`: folder containing the outputs of the processing.
   - `pdf`: pdf files.
   - `Rdata`: Rdata files.
@@ -56,11 +56,6 @@ If you use this source code, please cite article:
     - `serious_search_pdf_plot.R`: `R`script to save graphics in pdf format.
     - `serious_searcher_svg_plots.R`: `R`script to save graphics in svg format.
   - `processing`: `R` scripts for data processing ad hoc functions.
-    * `cartography`: folder for cartography processing
-      * `carto.R`: functions used for cartographic data processing.
-    * `data_cleaning`: folder containing cleaning data scripts.
-      * `import_SL_event_data.R`: `R`script to import events yearly data.
-      * `listing_features_data_SL.R`: `R`script to process SeLoger dataset.
   - `serious_search`: `R` scripts for the analysis of serious search.
 
 ## Installation
