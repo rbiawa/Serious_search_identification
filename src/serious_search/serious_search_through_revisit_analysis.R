@@ -680,7 +680,7 @@ dev.off()
 
 
 
-sink("out/tex/serious_search/glm/mail_form_model_summary.tex")
+sink("out/tex/serious_search/mail_form_regression/mail_form_model_summary.tex")
 print(
   xtable::xtable(mail_form_model_summary,
                  align = c(rep("l", 1), rep("r", 4)),

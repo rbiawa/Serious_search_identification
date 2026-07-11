@@ -13,13 +13,14 @@
 # Sampling
 #========================
 
+if (!exists("SAMPLE_PROPORTION")) SAMPLE_PROPORTION <- 100
 
 
 {
   
   # Size
   
-  prop <- .6
+  prop <- SAMPLE_PROPORTION
   
   size <- round(prop*nrow(analysis_df)/100)
   

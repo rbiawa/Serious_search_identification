@@ -13,12 +13,21 @@
 
 LEAVE_R <- FALSE
 
-# Event type label
+# Event action label
 
+ ## for phone call (or number displaying)
 PHONE_NUMBER_DISPLAY <- "phone_display-number" 
+
+ ## For mail form submission
 MAIL_FORM_SUBMISSION <- "mail_form-submitted"
+
+# Spatial variable names for department and city
 DEP_ID_VARIABLE      <- "dep_ID"
-CITY_ID_VARIABLE      <- "sl_insee_city_id"
+CITY_ID_VARIABLE     <- "sl_insee_city_id"
+
+
+# Set the sample size for clustering (is set to 100 as default value)
+SAMPLE_PROPORTION    <- 100 # in [0,100]
 
 
 
