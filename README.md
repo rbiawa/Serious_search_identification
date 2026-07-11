@@ -50,19 +50,36 @@ If you use this source code, please cite article:
   - `svg`: svg files.
   - `tex`: tex files (output in Latex format).
 - `src`: folder containing the source code.
-  - `plot`: `R` scripts for plots.
+  - `plot`: folder containing `R` scripts for plots.
     - `map_plot.R`: `R` script to plot Online search intensity by city.
     - `sample_search_cluster_plot.R`: `R` script to plot serious search graphics.
+    - `save_tables.R`: `R` script to save tables in tex format.
     - `serious_search_pdf_plot.R`: `R`script to save graphics in pdf format.
     - `serious_searcher_svg_plots.R`: `R`script to save graphics in svg format.
-  - `processing`: `R` scripts for data processing ad hoc functions.
-  - `serious_search`: `R` scripts for the analysis of serious search.
-- `main.R`: the main `R` scripts to run the full processings.
+  - `serious_search`: folder containing `R` scripts for the analysis of serious search.
+    - `contact_indicators.R`: `R`script to compute contact indicators.
+    - `revisit_contact_temporality.R`: `R`script to analyze behavioural temporality between Revist and Contact.
+    - `revisit_contact_temporality.R`: `R`script to analyze the revisiting temporality.
+    - `serious_search_through_revisit.R`: `R`script to compute listings' revisit indicators and search variability           indicators.
+    - `serious_search_through_revisit_analysis.R`: `R`script to analyze search engagement through listings'                     revisit indicators and search variability indicators.
+    - `serious_search_through_revisit_sample_analysis.R` : `R`script to analyze search engagement through listings'              revisit indicators and search variability indicators on a sample of the online searchers.
+  - `create_directories.R` : `R` scripts to create directories.
+  - `load_data.R`: `R` script to load data.
+  - `packages_loading.R` : `R` script to install (if not ye installed) and load the packages used in this work, along with customer functions.
+  - `processing_functions.R`: `R` scripts for data processing ad hoc functions.
+  - `main.R`: the main `R` scripts to run the full processings.
 - `Serious_search_identification.Rproj`: `R` projet file to run the projet.
 
 ## Installation
 
 ### R and Packages
+To run this program you need to install `R` language and the required packages :
+1. install the [`R` language](https://cran.r-project.org/)
+2. Download this project from GitHub and unzip or clone it.
+3. Run `packages_loading.R` to install the required packages (this step is included in `main.R`; a minimal Internet connection is needed).
+
+
+
 
 ### Data
 
