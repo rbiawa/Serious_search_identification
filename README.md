@@ -250,7 +250,7 @@ Netherlands Journal of Housing and the Built Environment, 11(3), 209–232.
 DOI: https://doi.org/10.1007/BF02496589
 
 **Muth, R.** (1969).  
-*Cities and Housing.*  
+*Cities and Housing; The Spatial Pattern of Urban Residential Land Use.*  
 University of Chicago Press.
 
 **Oksanen, J., et al.** (2024).  
@@ -273,7 +273,8 @@ EPJ Data Science, 7(1), 47.
 DOI: https://doi.org/10.1140/epjds/s13688-018-0176-2
 
 **Pannu, A., & El-Saeiti, I. N.** (2025).  
-*Evaluating predictive accuracy and model selection in logistic regression.*  
+*valuating predictive accuracy and model selection in logistic regression: a
+statistical approach using sensitivity, specificity, and ROC analysis.*  
 International Journal of Management, 16(1).  
 DOI: https://doi.org/10.34218/IJM_16_01_002
 
@@ -321,7 +322,8 @@ DOI: https://doi.org/10.1371/journal.pone.0247712
 URL: https://fr.themedialeader.com/4-francais-sur-10-ont-visite-les-sites-et-applications-dimmobilier-en-avril-selon-mediametrie/
 
 **van der Lijn, C.** (2021).  
-*Understanding spatial housing choice and demand.*  
+*nderstanding spatial housing choice and demand: A comparative study of London,
+Liverpool, and Sheffiel.*  
 PhD Thesis, University of Sheffield.  
 URL: https://etheses.whiterose.ac.uk/id/eprint/28972/
 
