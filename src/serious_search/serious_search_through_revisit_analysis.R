@@ -17,21 +17,25 @@ analysis_df <- visitor_stats %>%
   dplyr::select("fullvisitorid", 
                 # Search intensity
                 "n_events", "n_listings", "nb_sessions", "mean_session_size", 
-                "mean_click_per_listing", "max_visits_on_listing", "top1_share", "n_switches", 
+                "mean_click_per_listing", "max_visits_on_listing", "top1_share",
+                "n_switches", 
                 
                 # Revisit variables
-                "n_listings_revisited", "prop_listings_revisited", "n_revisits_24h", "n_revisits_lt1h", "n_revisits_lt6h", "n_revisits_gt48h",
+                "n_listings_revisited", "prop_listings_revisited", "n_revisits_24h",
+                "n_revisits_lt1h", "n_revisits_lt6h", "n_revisits_gt48h",
                 "any_revisit",
                 
                 # Typomorphologic caracteristics variability
                 "type_simpson", "room_count_simpson", "price_sd", "area_sd", 
                 
                 # Spatial variability
-                "n_city", "n_dep", "n_reg", "city_simpson", "dep_simpson", "dep_contig", "city_contig",
+                "n_city", "n_dep", "n_reg", "city_simpson", "dep_simpson", 
+                "dep_contig", "city_contig",
                 
                 # Logging and contact indicators
-                "is_logged", "phone_display", "mail_form", "any_contact", "any_action",
-                "any_action_fct", "any_contact_fct", "mail_form_fct", "phone_display_fct", "any_revisit_fct")
+                "is_logged", "phone_display", "mail_form", "any_contact", 
+                "any_action", "any_action_fct", "any_contact_fct",
+                "mail_form_fct", "phone_display_fct", "any_revisit_fct")
 
 rm(visitor_stats)
 

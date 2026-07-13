@@ -11,6 +11,7 @@
 # Processing parameters
 #==============================
 
+# Leave R after processing ? If so, set LEAVE_R to TRUE
 LEAVE_R <- FALSE
 
 # Event action label
@@ -114,5 +115,9 @@ source("src/plot/serious_search_pdf_plot.R")
 # source("src/plot/save_tables.R")
 
 
+
+#===========================
+# Close R ?
+#===========================
 
 if (LEAVE_R) q(save = "no", status = 0, runLast = FALSE)
