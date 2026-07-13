@@ -1,5 +1,5 @@
 #########################################################################################
-# Plot serious search graphics
+# Plot serious search clustering graphics on a sample
 # 
 # 
 #

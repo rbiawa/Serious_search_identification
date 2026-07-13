@@ -6,13 +6,34 @@
 # source("src/serious_search/revisit_contact_temporality.R")
 ################################################################################
 
+if (!exists("PHONE_NUMBER_DISPLAY") || !exists("MAIL_FORM_SUBMISSION")) {
+  PHONE_NUMBER_DISPLAY <- "phone_display-number"
+  MAIL_FORM_SUBMISSION <- "mail_form-submitted"
+}
+
+
+if(!exists("mail_phone")) {
+  mail_phone <- read_parquet("data/mail_phone.parquet") %>%
+    as.data.table()
+}
+
+
+if(!exists("events")) {
+  events <- read_parquet("data/events.parquet") %>%
+    as.data.table()
+  
+  events <- events %>%
+    mutate(
+      datetime = as.POSIXct(datetime)
+    )
+}
 
 
 # =====================================
 # 1. Keep only true contact actions
 # =====================================
 
-contact_actions <- c("mail_form-submitted", "phone_display-number")
+contact_actions <- c(MAIL_FORM_SUBMISSION, PHONE_NUMBER_DISPLAY)
 
 contacts <- mail_phone %>%
   filter(event_action %in% contact_actions) %>%

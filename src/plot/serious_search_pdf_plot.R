@@ -1,10 +1,10 @@
-#########################################################################################
+################################################################################
 # Plot serious search graphics
 # 
 # 
 #
 # source("src/plot/serious_search_pdf_plot.R")
-#########################################################################################
+################################################################################
 
 if(!require("patchwork")) install.packages("patchwork"); library(patchwork)
 if(!require("xtable")) install.packages("xtable"); library(xtable)
@@ -33,7 +33,8 @@ font_size <- 20
 col_contact <- c(my_red, my_blue)
 col_revisit    <- c("tomato3", "turquoise")
 
-dir.create("out/pdf/serious_search/univariate_analysis/", recursive = TRUE, showWarnings = FALSE)
+dir.create("out/pdf/serious_search/univariate_analysis/", 
+           recursive = TRUE, showWarnings = FALSE)
 
 freq(analysis_df_transformed_sample$any_action)
 freq(analysis_df_transformed_sample$any_contact)
@@ -45,11 +46,17 @@ freq(analysis_df_transformed_sample$any_revisit)
 
 {
   # Table 1
-  df_contact <- as.data.frame(prop.table(table(analysis_df_transformed_sample$any_contact)))
+  df_contact <- as.data.frame(prop.table(table(
+    analysis_df_transformed_sample$any_contact)
+    )
+  )
   names(df_contact) <- c("any_contact", "prop")
   
   # Table 2
-  df_mail <- as.data.frame(prop.table(table(analysis_df_transformed_sample$mail_form)))
+  df_mail <- as.data.frame(prop.table(
+    table(analysis_df_transformed_sample$mail_form)
+    )
+  )
   names(df_mail) <- c("mail", "prop")
   
   
@@ -74,7 +81,8 @@ freq(analysis_df_transformed_sample$any_revisit)
     theme_minimal()
 }
 
-pdf("out/pdf/serious_search/univariate_analysis/contacts.pdf", width = 14, height = 4)
+pdf("out/pdf/serious_search/univariate_analysis/contacts.pdf",
+    width = 14, height = 4)
 p1 + p2 + plot_layout(ncol = 2)
 dev.off()
 
@@ -99,8 +107,8 @@ if(exists("contact_behavior")) {
            align = c("l", "r", "r", "r"),
            display = c("s", "d", rep("f", 2))
            ),
-    include.rownames = TRUE,   # ou FALSE selon ton besoin
-    booktabs = TRUE            # joli rendu LaTeX
+    include.rownames = TRUE,
+    booktabs = TRUE
 
   )
 
@@ -111,17 +119,21 @@ if(exists("contact_behavior")) {
              ), 
         include.rownames = TRUE,
         booktabs = TRUE,
-        floating = FALSE   # <-- crucial: no table environment
+        floating = FALSE
         )
   sink()
   
   
   
-  df_rev_vs_cont <- as.data.frame(prop.table(table(contact_behavior$timing_category)))
+  df_rev_vs_cont <- as.data.frame(prop.table(
+    table(contact_behavior$timing_category)
+    )
+  )
   names(df_rev_vs_cont) <- c("timing_category", "prop")
   
   
-  rev_vs_cont <- ggplot(df_rev_vs_cont, aes(x = timing_category, y = prop, fill = timing_category)) +
+  rev_vs_cont <- ggplot(df_rev_vs_cont, aes(x = timing_category, 
+                                            y = prop, fill = timing_category)) +
     geom_bar(stat = "identity") +
     #scale_fill_manual(values = c(my_blue, my_red)) +
     labs(
@@ -135,7 +147,8 @@ if(exists("contact_behavior")) {
 
 
 
-tab_clust <- freq(analysis_df_transformed_sample$research_category, cum = TRUE) %>% 
+tab_clust <- freq(analysis_df_transformed_sample$research_category,
+                  cum = TRUE) %>% 
   mutate(n = round(n), 'val%' = NULL, 'val%cum' = NULL)
 
 
@@ -144,8 +157,8 @@ print(
          align = c("l", "r", "r", "r"),
          display = c("s", "d", rep("f", 2))
   ),
-  include.rownames = TRUE,   # ou FALSE selon ton besoin
-  booktabs = TRUE            # joli rendu LaTeX
+  include.rownames = TRUE,
+  booktabs = TRUE
   
 )
 
@@ -156,7 +169,7 @@ print(xtable(tab_clust,
 ), 
 include.rownames = TRUE,
 booktabs = TRUE,
-floating = FALSE   # <-- crucial: no table environment
+floating = FALSE
 )
 sink()
 
@@ -175,12 +188,16 @@ analysis_df_transformed <- analysis_df_transformed %>%
 freq(analysis_df_transformed$serious_searcher)
 
 analysis_df_transformed[, serious_searcher_fct :=
-                factor(serious_searcher, labels = c("Neither contacted nor visited", "Contacted or revisited"))]
+                factor(serious_searcher, 
+                       labels = c("Neither contacted nor visited", 
+                                  "Contacted or revisited"))
+                ]
 
 freq(analysis_df_transformed$serious_searcher_fct)
 
 
-tab_serious_searchers <- freq(analysis_df_transformed$serious_searcher_fct, cum = TRUE) %>% 
+tab_serious_searchers <- freq(analysis_df_transformed$serious_searcher_fct, 
+                              cum = TRUE) %>% 
   mutate(n = round(n), 'val%' = NULL, 'val%cum' = NULL)
 
 sink("out/tex/serious_search/univariate_analysis/serious_searchers.tex")
@@ -190,7 +207,7 @@ print(xtable(tab_serious_searchers,
 ), 
 include.rownames = TRUE,
 booktabs = TRUE,
-floating = FALSE   # <-- crucial: no table environment
+floating = FALSE  
 )
 sink()
 
@@ -209,7 +226,7 @@ print(xtable(tab_any_contact,
 ), 
 include.rownames = TRUE,
 booktabs = TRUE,
-floating = FALSE   # <-- crucial: no table environment
+floating = FALSE
 )
 sink()
 
@@ -224,7 +241,7 @@ print(xtable(tab_mail_form,
 ), 
 include.rownames = TRUE,
 booktabs = TRUE,
-floating = FALSE   # <-- crucial: no table environment
+floating = FALSE
 )
 sink()
 
@@ -243,7 +260,7 @@ print(xtable(tab_any_revisit,
 ), 
 include.rownames = TRUE,
 booktabs = TRUE,
-floating = FALSE   # <-- crucial: no table environment
+floating = FALSE
 )
 sink()
 
@@ -260,22 +277,24 @@ retrieve_package("stringr")
 col_contact <- c(my_red, my_blue)
 col_revisit <- c("tomato3", "turquoise")
 
-dir.create("out/pdf/serious_search/bivariate_analysis/", recursive = TRUE, showWarnings = FALSE)
+dir.create("out/pdf/serious_search/bivariate_analysis/", 
+           recursive = TRUE, showWarnings = FALSE)
 
 
-revisit_by_contact_tabl <- prop.table(table(analysis_df_transformed$any_revisit_fct,
-                                            analysis_df_transformed$any_contact_fct), 
-                                      2)   # proportions par contact
+revisit_by_contact_tabl <- prop.table(
+  table(analysis_df_transformed$any_revisit_fct,
+        analysis_df_transformed$any_contact_fct), 
+  2)   
 
-contact_by_revisit_tabl <- prop.table(table(analysis_df_transformed$any_contact_fct,
-                                            analysis_df_transformed$any_revisit_fct), 
-                                      2)   # proportions par revisite
+contact_by_revisit_tabl <- prop.table(
+  table(analysis_df_transformed$any_contact_fct,
+        analysis_df_transformed$any_revisit_fct), 
+  2)  
 
 
 df1 <- as.data.frame(as.table(contact_by_revisit_tabl))
 
-# df1$Var1 <- str_wrap(df1$Var1, width = 10)
-# df1$Var2 <- str_wrap(df1$Var2, width = 10)
+
 
 p1 <- ggplot(df1, aes(Var2, Freq, fill = Var1)) +
   geom_bar(stat = "identity") +
@@ -283,10 +302,11 @@ p1 <- ggplot(df1, aes(Var2, Freq, fill = Var1)) +
   labs(x = "Any contact", y = "Proportion", fill = "Any revisit") +
   theme_minimal(base_size = font_size) +
   theme(
-    axis.title.x = element_text(size = 10),        # taille du label X
-    axis.title.y = element_text(size = 10),        # taille du label Y (si non vide)
-    legend.title = element_text(size = 10),        # taille du titre de légende
-    axis.text.x = element_text(angle = 45, size = 10, vjust = 0.5, lineheight = 0.5),
+    axis.title.x = element_text(size = 10),
+    axis.title.y = element_text(size = 10),
+    legend.title = element_text(size = 10),
+    axis.text.x = element_text(angle = 45, 
+                               size = 10, vjust = 0.5, lineheight = 0.5),
     axis.text.y = element_text(size = 10, lineheight = 0.8),
     legend.text  = element_text(size = 10, lineheight = 0.5)
   )
@@ -303,10 +323,11 @@ p2 <- ggplot(df2, aes(Var2, Freq, fill = Var1)) +
   labs(x = "Any contact", y = "", fill = "Any revisit") +
   theme_minimal(base_size = font_size) +
   theme(
-    axis.title.x = element_text(size = 10),        # taille du label X
-    axis.title.y = element_text(size = 10),        # taille du label Y (si non vide)
-    legend.title = element_text(size = 10),        # taille du titre de légende
-    axis.text.x = element_text(angle = 45, size = 10, vjust = 0.5, lineheight = 0.5),
+    axis.title.x = element_text(size = 10), 
+    axis.title.y = element_text(size = 10), 
+    legend.title = element_text(size = 10),
+    axis.text.x = element_text(angle = 45, 
+                               size = 10, vjust = 0.5, lineheight = 0.5),
     axis.text.y = element_text(size = 10, lineheight = 0.8),
     legend.text  = element_text(size = 10, lineheight = 0.5)
   )
@@ -316,20 +337,24 @@ p2 <- ggplot(df2, aes(Var2, Freq, fill = Var1)) +
 
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_plot.pdf", width = 7, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_plot.pdf", 
+    width = 7, height = 7)
 p1 + p2 + plot_layout(widths = .5)
 dev.off()
 
 
 {
   
-  revisit_by_mail_form_tabl <- prop.table(table(analysis_df_transformed$any_revisit_fct,
-                                                analysis_df_transformed$mail_form_fct), 
-                                          2)   # proportions par revisite
+  revisit_by_mail_form_tabl <- prop.table(
+    table(analysis_df_transformed$any_revisit_fct,
+          analysis_df_transformed$mail_form_fct), 
+    2)   # proportions par revisite
   
-  contact_by_mail_form_tabl <- prop.table(table(analysis_df_transformed$mail_form_fct,
-                                                analysis_df_transformed$any_revisit_fct), 
-                                          2)   # proportions par revisite
+  contact_by_mail_form_tabl <- prop.table(
+    table(analysis_df_transformed$mail_form_fct,
+          analysis_df_transformed$any_revisit_fct), 
+    2
+  )   # proportions par revisite
   
   
   
@@ -340,10 +365,11 @@ dev.off()
     labs(x = "Any revisit", y = "Proportion", fill = "Mail form")+
     theme_minimal(base_size = font_size) +
     theme(
-      axis.title.x = element_text(size = 10),        # taille du label X
-      axis.title.y = element_text(size = 10),        # taille du label Y (si non vide)
-      legend.title = element_text(size = 10),        # taille du titre de légende
-      axis.text.x = element_text(angle = 45, size = 10, vjust = 0.5, lineheight = 0.5),
+      axis.title.x = element_text(size = 10), 
+      axis.title.y = element_text(size = 10),
+      legend.title = element_text(size = 10),
+      axis.text.x = element_text(angle = 45, 
+                                 size = 10, vjust = 0.5, lineheight = 0.5),
       axis.text.y = element_text(size = 10, lineheight = 0.8),
       legend.text  = element_text(size = 10, lineheight = 0.5)
     )
@@ -357,10 +383,11 @@ dev.off()
     labs(x = "Mail form", y = "", fill = "Any revisit")+
     theme_minimal(base_size = font_size) +
     theme(
-      axis.title.x = element_text(size = 10),        # taille du label X
-      axis.title.y = element_text(size = 10),        # taille du label Y (si non vide)
-      legend.title = element_text(size = 10),        # taille du titre de légende
-      axis.text.x = element_text(angle = 45, size = 10, vjust = 0.5, lineheight = 0.5),
+      axis.title.x = element_text(size = 10),       
+      axis.title.y = element_text(size = 10),      
+      legend.title = element_text(size = 10),
+      axis.text.x = element_text(angle = 45, 
+                                 size = 10, vjust = 0.5, lineheight = 0.5),
       axis.text.y = element_text(size = 10, lineheight = 0.8),
       legend.text  = element_text(size = 10, lineheight = 0.5)
     )
@@ -369,17 +396,20 @@ dev.off()
 }
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_mail_plot.pdf", width = 7, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_mail_plot.pdf",
+    width = 7, height = 7)
 p_mail_1 + p_mail_2 + plot_layout(widths = .5)
 dev.off()
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_mail_plot.pdf", width = 15, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_mail_plot.pdf",
+    width = 15, height = 7)
 (p1 + p2) +  (p_mail_1 + p_mail_2) + plot_layout(widths = .5)
 dev.off()
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/correlation_matrix.pdf", width = 5, height = 5)
+pdf("out/pdf/serious_search/bivariate_analysis/correlation_matrix.pdf",
+    width = 5, height = 5)
 
 corrplot(
   corr_matrix,
@@ -520,13 +550,15 @@ pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_plot_1.pdf", w
 dev.off()
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_mail_plot_1.pdf", width = 9, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_mail_plot_1.pdf",
+    width = 9, height = 7)
 (g_mail_1 + g_mail_2) + plot_layout(widths = .5)
 
 dev.off()
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_mail_plot_2.pdf", width = 7, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/revisit_vs_contact_mail_plot_2.pdf",
+    width = 7, height = 7)
 
 (g_contact_1 + g_contact_2) +
   (g_mail_1 + g_mail_2) 
@@ -567,7 +599,8 @@ research_category_vs_contact <- bivariate_plot(
 
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/research_category_vs_contact.pdf", width = 7, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/research_category_vs_contact.pdf",
+    width = 7, height = 7)
 
 research_category_vs_contact
 
@@ -589,7 +622,8 @@ research_category_vs_mail_form <- bivariate_plot(
 
 
 
-pdf("out/pdf/serious_search/bivariate_analysis/research_category_vs_mail_form.pdf", width = 7, height = 7)
+pdf("out/pdf/serious_search/bivariate_analysis/research_category_vs_mail_form.pdf",
+    width = 7, height = 7)
 
 research_category_vs_mail_form
 
@@ -714,7 +748,8 @@ dev.off()
 pdf("out/pdf/serious_search/acp_clustering/res.PCA_12_rep_qual.pdf")
 
 rep_qual <- fviz_pca_var(res.PCA, col.var = "cos2") +
-  scale_color_gradient2(low = "blue", mid = "yellow", high = "red", midpoint = 0.5) +
+  scale_color_gradient2(low = "blue", mid = "yellow", high = "red",
+                        midpoint = 0.5) +
   theme_minimal()
 
 print(rep_qual)
@@ -1140,7 +1175,8 @@ if(exists("res.HCPC_sample")) {
   #======================================
   
   
-  sil <- cluster::silhouette(as.numeric(res.HCPC_sample$data.clust$clust), dist(res.PCA_sample$ind$coord))
+  sil <- cluster::silhouette(as.numeric(res.HCPC_sample$data.clust$clust),
+                             dist(res.PCA_sample$ind$coord))
   if (interactive()) plot(sil,
                           main = "Silhouette Widths by Cluster",
                           col = ax_col)
@@ -1153,7 +1189,8 @@ if(exists("res.HCPC_sample")) {
          )
   dev.off()
   
-  aggregate(sil[, 3], list(cluster = as.numeric(res.HCPC_sample$data.clust$clust)), mean)
+  aggregate(sil[, 3], 
+            list(cluster = as.numeric(res.HCPC_sample$data.clust$clust)), mean)
   
 }
 
@@ -1171,6 +1208,12 @@ if(exists("res.HCPC_sample")) {
 # Contact model
 #
 #===============================
+
+
+retrieve_package("gtsummary")
+retrieve_package("gt")
+retrieve_package("webshot2")
+
 
 perform_logit_linearity <- FALSE
 
@@ -1208,19 +1251,17 @@ tidy_plus_plus(contact_model, exponentiate = TRUE)
 
 
 
-library(gtsummary)
-library(gt)
-if(!require("webshot2")) install.packages("webshot2"); library(webshot2)
-
 coeff <- tbl_regression(contact_model, exponentiate = TRUE)
 
 
 coeff_gt <- as_gt(coeff)
 
-gtsave(coeff_gt, filename = "out/pdf/serious_search/contact_regression/contact_model_coeff.png")
+gtsave(coeff_gt, 
+       filename = "out/pdf/serious_search/contact_regression/contact_model_coeff.png")
 
 
-gtsave(coeff_gt, filename = "out/pdf/serious_search/contact_regression/contact_model_coeff.html")
+gtsave(coeff_gt, 
+       filename = "out/pdf/serious_search/contact_regression/contact_model_coeff.html")
 
 
 
@@ -1229,7 +1270,11 @@ gtsave(coeff_gt, filename = "out/pdf/serious_search/contact_regression/contact_m
 # Effect graphics
 #==========================
 
-if(!require("GGally")) install.packages("GGally"); library(GGally)
+retrieve_package("GGally")
+retrieve_package("forestmodel")
+retrieve_packages("effects")
+retrieve_package("ggeffects")
+
 
 pdf("out/pdf/serious_search/contact_regression/odds_ratios_plot.pdf", width = 8, height = 5)
 
@@ -1239,15 +1284,12 @@ dev.off()
 
 
 
-if(!require("forestmodel")) install.packages("forestmodel"); library(forestmodel)
-
 pdf("out/pdf/serious_search/contact_regression/odds_ratios_plot_wth_values.pdf", width = 8, height = 5)
 forest_model(contact_model)
 
 dev.off()
 
 
-if(!require("effects")) install.packages("effects"); library(effects)
 
 # pdf("out/pdf/serious_search/contact_regression/effects_plots.pdf", width = 10, height = 8)
 # plot(allEffects(contact_model))
@@ -1255,7 +1297,7 @@ if(!require("effects")) install.packages("effects"); library(effects)
 # dev.off()
 
 
-if(!require("ggeffects")) install.packages("ggeffects"); library(ggeffects)
+
 
 pdf("out/pdf/serious_search/contact_regression/predicted_propabilities.pdf", width = 11, height = 8)
 cowplot::plot_grid(plotlist = plot(ggeffect(contact_model)))
@@ -1278,7 +1320,6 @@ dev.off()
 # Effect graphics
 #==========================
 
-if(!require("GGally")) install.packages("GGally"); library(GGally)
 
 pdf("out/pdf/serious_search/mail_form_regression/mail_form_odds_ratios_plot.pdf", width = 8, height = 5)
 
@@ -1288,7 +1329,6 @@ dev.off()
 
 
 
-if(!require("forestmodel")) install.packages("forestmodel"); library(forestmodel)
 
 pdf("out/pdf/serious_search/mail_form_regression/mail_form_odds_ratios_plot_wth_values.pdf", width = 8, height = 5)
 forest_model(mail_form_model)
@@ -1296,15 +1336,13 @@ forest_model(mail_form_model)
 dev.off()
 
 
-if(!require("effects")) install.packages("effects"); library(effects)
+
 
 # pdf("out/pdf/serious_search/mail_form_regression/mail_form_effects_plots.pdf", width = 10, height = 8)
 # plot(allEffects(mail_form_model))
 # 
 # dev.off()
 
-
-if(!require("ggeffects")) install.packages("ggeffects"); library(ggeffects)
 
 pdf("out/pdf/serious_search/mail_form_regression/mail_form_predicted_propabilities.pdf", width = 11, height = 8)
 cowplot::plot_grid(plotlist = plot(ggeffect(mail_form_model)))

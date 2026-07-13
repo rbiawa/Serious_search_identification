@@ -3,7 +3,7 @@
 # 
 # 
 #
-# source("src/serious_search/revisit_contact_temporality.R")
+# source("src/serious_search/revisit_time_analysis.R")
 ################################################################################
 
 retrieve_package("xtable")
@@ -39,6 +39,19 @@ plot_num_var <- function(var) {
 #============================================
 # 1. Time by session
 #============================================
+
+
+if(!exists("events")) {
+  events <- read_parquet("data/events.parquet") %>%
+    as.data.table()
+  
+  events <- events %>%
+    mutate(
+      datetime = as.POSIXct(datetime)
+    )
+}
+
+
 
 visits <- events[
   , .(
