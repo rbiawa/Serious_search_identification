@@ -128,7 +128,7 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
   3. Run the `serious_search_through_revisit_along_with_contact_indicators.R` script using `source("serious_search_through_revisit_along_with_contact_indicators.R")`.
      
   #### Output
-  The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet`. 
+  The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet`. Serious is identified through the column `is_serious`, which is a logical variable.
   
 
 #### If contact data (phone number displaying and mail form submission) are available :
@@ -145,7 +145,7 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
   3. Run the `serious_search_through_revisit_along_with_contact_indicators.R` script using `source("serious_search_through_revisit_along_with_contact_indicators.R")`. 
 
   #### Output
-  The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet`. 
+  The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet`.  Serious is identified through the column `is_serious`, which is a logical variable.
 
 
 ## References
