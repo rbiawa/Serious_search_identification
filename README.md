@@ -70,6 +70,7 @@ If you use this source code, please cite article:
   - `packages_loading.R` : `R` script to install (if not ye installed) and load the packages used in this work, along with customer functions.
   - `processing_functions.R`: `R` scripts for data processing ad hoc functions.
   - `main.R`: the main `R` scripts to run the full processings.
+  - `serious_search_through_revisit_along_with_contact_indicators.R`: Identify serious search with revisit and contact (phone number displaying and mail form submission) indicators.
 - `Serious_search_identification.Rproj`: `R` projet file to run the projet.
 
 ## Installation
