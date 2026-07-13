@@ -70,6 +70,8 @@ If you use this source code, please cite article:
   - `packages_loading.R` : `R` script to install (if not ye installed) and load the packages used in this work, along with customer functions.
   - `processing_functions.R`: `R` scripts for data processing ad hoc functions.
   - `main.R`: the main `R` scripts to run the full processings.
+  - `serious_search_through_revisit_along_with_contact_indicators.R`: Identify serious search with revisit and contact (phone number displaying and mail form submission) indicators.
+  - `serious_search_through_revisit_without_contact_indicators.R`: Identify serious search with revisit only.
 - `Serious_search_identification.Rproj`: `R` projet file to run the projet.
 
 ## Installation
@@ -105,7 +107,9 @@ First, you need to set files `events.parquet`, `features.gpkg and `mail_phone.pa
 - `mail_phone.parquet`: a dataset (in parquet format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : "fullvisitorid" (user ID); "id_listing" (listing ID); "datetime" (date and time of view); "visitid" (view ID in the dataset); "event_action" (indication of the contact action a user made : displaying a phone number or submiting a mail form); "is_logged" (indication of wether the user was logged while viewing the listing).
 - 
   #### Processing
-  copy your own `events.parquet`, `features.gpkg and `mail_phone.parquet`
+  1. copy your own `events.parquet`, `features.gpkg and `mail_phone.parquet` in `data` folder;
+  2. open `Serious_search_identification.Rproj`;
+  3. Run the `main.R` script using `source("main.R")`. 
 
 ## Dependencies
 
