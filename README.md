@@ -45,7 +45,7 @@ If you use this source code, please cite article:
   - `features.gpkg`: dataset (in gpkg format) of every single listings' features. This table contains colums : "id_listing" (listing ID); "price" (property price); "area" (property area); "room_count" (property room count); "fct_room_count" (property room count set to factor variable); "sqm_price" (property square meter price); "item_type" (property type, wether a house or appartment);
   - `mail_phone.parquet`: a dataset (in parquet format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : "fullvisitorid" (user ID); "id_listing" (listing ID); "datetime" (date and time of view); "visitid" (view ID in the dataset); "event_action" (indication of the contact action a user made : displaying a phone number or submiting a mail form); "is_logged" (indication of wether the user was logged while viewing the listing).
   - `geom_sf_cities.gpkg`: `shapefile` containing cities' limits.
-  - `geom_sf_departements.gpkg`: `shapefile` containing departements' limits. In the French context, departments correspond to the NUTS 3 level of the EU territorial classification system, which is an administrative unit with populations ranging from 150,000 to 800,000 inhabitants [Eu'26](#references).
+  - `geom_sf_departements.gpkg`: `shapefile` containing departements' limits. In the French context, departments correspond to the NUTS 3 level of the EU territorial classification system, which is an administrative unit with populations ranging from 150,000 to 800,000 inhabitants [[Eu'26](#references)].
 - `out`: folder containing the outputs of the processing.
   - `pdf`: pdf files.
   - `Rdata`: Rdata files.
