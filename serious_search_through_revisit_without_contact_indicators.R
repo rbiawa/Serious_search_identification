@@ -47,7 +47,7 @@ events <- events %>%
 #   Load listings' features      
 #==========================================
 
-features <- st_read("data/features.gpkg") %>%
+features <- read_parquet("data/features.parquet") %>%
   as.data.table()
 
 
@@ -57,7 +57,7 @@ features <- st_read("data/features.gpkg") %>%
 #    Compute Contiguity matrices       
 #===============================#
 
-geom_sf_departements <- st_read("data/geom_sf_departements.gpkg")
+geom_sf_departments <- st_read("data/geom_sf_departments.gpkg")
 
 geom_sf_cities <- st_read("data/geom_sf_cities.gpkg")
 
@@ -65,7 +65,7 @@ geom_sf_cities <- st_read("data/geom_sf_cities.gpkg")
 # subregion contiguity matrix
 
 
-dep_contig <- flowcontig(bkg = geom_sf_departements
+dep_contig <- flowcontig(bkg = geom_sf_departments
                          , code = "dep_ID"
                          , k=1
                          , algo = "automatic")
@@ -91,8 +91,7 @@ if (interactive()) {
 # city contiguity matrix
 
 if (TRUE) {
-  city_contig <- flowcontig(bkg = geom_sf_cities %>%
-                              filter(INSEE_REG %in% c("11", "32"))
+  city_contig <- flowcontig(bkg = geom_sf_cities
                             , code = "city_ID"
                             , k=1
                             , algo = "automatic")
@@ -203,7 +202,7 @@ rm(ev_feat)
 
 if (!exists("DEP_ID_VARIABLE") || !exists("CITY_ID_VARIABLE")){
   DEP_ID_VARIABLE      <- "dep_ID"
-  CITY_ID_VARIABLE      <- "sl_insee_city_id"
+  CITY_ID_VARIABLE      <- "city_ID"
 }
 
 
@@ -327,11 +326,11 @@ ev_revisit <- check_connectivity(ev_revisit
       # =============================
       # 3. Geography
       # =============================
-      n_city = uniqueN(sl_insee_city_id),
-      n_dep  = uniqueN(INSEE_DEP),
-      n_reg  = uniqueN(INSEE_REG),
+      n_city = uniqueN(city_ID),
+      n_dep  = uniqueN(dep_ID),
+      n_reg  = uniqueN(reg_ID),
       # City diversity
-      city_simpson = simpson.unb(table(sl_insee_city_id)),
+      city_simpson = simpson.unb(table(city_ID)),
       
       
       # Subregion diversity

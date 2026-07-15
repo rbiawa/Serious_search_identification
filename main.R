@@ -24,7 +24,7 @@ MAIL_FORM_SUBMISSION <- "mail_form-submitted"
 
 # Spatial variable names for department and city
 DEP_ID_VARIABLE      <- "dep_ID"
-CITY_ID_VARIABLE     <- "sl_insee_city_id"
+CITY_ID_VARIABLE     <- "city_ID"
 
 
 # Set the sample size for clustering (is set to 100 as default value)

@@ -88,7 +88,7 @@ rm(ev_feat)
 
 if (!exists("DEP_ID_VARIABLE") || !exists("CITY_ID_VARIABLE")){
   DEP_ID_VARIABLE      <- "dep_ID"
-  CITY_ID_VARIABLE      <- "sl_insee_city_id"
+  CITY_ID_VARIABLE      <- "city_ID"
 }
 
 
@@ -212,15 +212,15 @@ ev_revisit <- check_connectivity(ev_revisit
      # =============================
      # 3. Geography
      # =============================
-     n_city = uniqueN(sl_insee_city_id),
-     n_dep  = uniqueN(INSEE_DEP),
-     n_reg  = uniqueN(INSEE_REG),
+     n_city = uniqueN(city_ID),
+     n_dep  = uniqueN(dep_ID),
+     n_reg  = uniqueN(reg_ID),
      # City diversity
-     city_simpson = simpson.unb(table(sl_insee_city_id)),
+     city_simpson = simpson.unb(table(city_ID)),
      
      
      # Subregion diversity
-     dep_simpson = simpson.unb(table(subregion)),
+     dep_simpson = simpson.unb(table(dep_ID)),
      
      
      

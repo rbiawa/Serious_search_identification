@@ -58,7 +58,7 @@ rm(action_summary)
 #   Load listings' features      
 #==========================================
 
-features <- st_read("data/features.gpkg") %>%
+features <- read_parquet("data/features.parquet") %>%
   as.data.table()
 
 
@@ -67,7 +67,7 @@ features <- st_read("data/features.gpkg") %>%
 #    Compute Contiguity matrices       
 #===============================#
 
-geom_sf_departements <- st_read("data/geom_sf_departements.gpkg")
+geom_sf_departments <- st_read("data/geom_sf_departments.gpkg")
 
 geom_sf_cities <- st_read("data/geom_sf_cities.gpkg")
 
@@ -75,7 +75,7 @@ geom_sf_cities <- st_read("data/geom_sf_cities.gpkg")
 # subregion contiguity matrix
 
 
-dep_contig <- flowcontig(bkg = geom_sf_departements
+dep_contig <- flowcontig(bkg = geom_sf_departments
                          , code = "dep_ID"
                          , k=1
                          , algo = "automatic")
@@ -101,8 +101,7 @@ if (interactive()) {
 # city contiguity matrix
 
 if (TRUE) {
-  city_contig <- flowcontig(bkg = geom_sf_cities %>%
-                              filter(INSEE_REG %in% c("11", "32"))
+  city_contig <- flowcontig(bkg = geom_sf_cities
                             , code = "city_ID"
                             , k=1
                             , algo = "automatic")
