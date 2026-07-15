@@ -87,14 +87,14 @@ You need to set up the `events.parquet`, `features.gpkg`, `mail_phone.parquet`, 
 ## Use
 
 ### To Replicate the Paper Experiments
-We unfortunately are not allowed to publish the data used in this paper, yet we provide fictional datasets to test the program and reproduce experiments similar to those presented in our paper *'**Who is Serious? A novel behavioral approach for identifying serious search on online real estate platforms**'*. After you have unzipped (or cloned) this project, run the `Serious_search_identification.Rproj` file. Then, run the `main.R` script using `source("main.R")`.
+We unfortunately are not allowed to publish the data used in this paper, yet we provide (see data/data.7z). fictional datasets to test the program and reproduce experiments similar to those presented in our paper *'**Who is Serious? A novel behavioral approach for identifying serious search on online real estate platforms**'*. After you have unzipped (or cloned) this project, run the `Serious_search_identification.Rproj` file. Then, run the `main.R` script using `source("main.R")`.
 
 
 #### Data Preparation
 
 #### Processing
-
-1. open `Serious_search_identification.Rproj`;
+0. Unzip data.7z into the folder data;
+1. Open `Serious_search_identification.Rproj`;
 2. Run the `main.R` script using `source("main.R")`.
 
 ### To Replicate the Paper Experiments on Other Data
