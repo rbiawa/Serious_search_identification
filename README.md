@@ -1,10 +1,10 @@
-SeriSearch v1.0.0
+SeriousSearch v1.0.0
 ===================
 *Serious Search Identification in User-generated data*
                                                             
 * Copyright 2024-2026 <Anonymous submission>
 
-SeriSearch is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation. For source availability and license information see licence.txt
+SeriousSearch is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation. For source availability and license information see licence.txt
 
 * **Lab site:** Anonymous submission
 * **GitHub repo:** Anonymous submission
