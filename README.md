@@ -114,8 +114,7 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
 
 #### Processing
   1. Copy your own `events.parquet`, `features.gpkg`, `geom_sf_cities.gpkg`, `geom_sf_departements.gpkg` and `mail_phone.parquet` in the `data` folder;
-  2. Open `Serious_search_identification.Rproj`;
-  3. Run the `main.R` script using `source("main.R")`. 
+  2. Run the `main.R` script using `source("main.R")`. 
 
 ### To Perform Only the Serious Search Identification
 These instructions are meant to perform a quick identification of serious search, without necessarily replicating all the experiments of the paper.
