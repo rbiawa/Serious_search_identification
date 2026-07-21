@@ -54,7 +54,7 @@ If you use this source code, please cite article:
   - `Rdata`: Rdata files containing `R`objects such as dataframes.
   - `svg`: svg files with the plots of the processing.
   - `tex`: tex files (output in [Latex](https://fr.wikipedia.org/wiki/LaTeX) format) with the tables produced by the processing and provided in the document.
-  - `parquet`: forlder containing output datasets (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet. For example, the output dataset of 'Serious and non serious users'.
+  - `parquet`: forlder containing output datasets (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet). For example, the output dataset of 'Serious and non serious users'.
   - `CSV`: forlder containing output datasets in [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format.
 - `src`: folder containing the source code.
   - `plot`: folder containing `R` scripts for plots.
@@ -137,6 +137,8 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
      
 #### Output
 The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet`. Serious search is identified through the column `is_serious`, which is a logical variable.
+
+## Dependencies
 
 
 ## References
