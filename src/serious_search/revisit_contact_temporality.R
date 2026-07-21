@@ -13,13 +13,13 @@ if (!exists("PHONE_NUMBER_DISPLAY") || !exists("MAIL_FORM_SUBMISSION")) {
 
 
 if(!exists("mail_phone")) {
-  mail_phone <- read_parquet("data/mail_phone.parquet") %>%
+  mail_phone <- read_parquet("in/mail_phone.parquet") %>%
     as.data.table()
 }
 
 
 if(!exists("events")) {
-  events <- read_parquet("data/events.parquet") %>%
+  events <- read_parquet("in/events.parquet") %>%
     as.data.table()
   
   events <- events %>%
@@ -38,7 +38,7 @@ contact_actions <- c(MAIL_FORM_SUBMISSION, PHONE_NUMBER_DISPLAY)
 contacts <- mail_phone %>%
   filter(event_action %in% contact_actions) %>%
   mutate(event_type = "contact") %>%
-  dplyr::select(fullvisitorid, visitid, datetime, hour, id_listing, event_type)
+  dplyr::select(fullvisitorid, visitid, datetime, id_listing, event_type)
 
 # =============================================
 # 2. Keep only users who actually contacted
@@ -49,7 +49,7 @@ users_with_contact <- unique(contacts$fullvisitorid)
 events_clean <- events %>%
   filter(fullvisitorid %in% users_with_contact) %>%
   mutate(event_type = "visit") %>%
-  dplyr::select(fullvisitorid, visitid, datetime, hour, id_listing, event_type)
+  dplyr::select(fullvisitorid, visitid, datetime, id_listing, event_type)
 
 # =============================================================
 # 3. Compute revisits ONLY inside events (the reliable source)

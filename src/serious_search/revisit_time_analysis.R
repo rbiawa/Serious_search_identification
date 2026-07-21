@@ -42,7 +42,7 @@ plot_num_var <- function(var) {
 
 
 if(!exists("events")) {
-  events <- read_parquet("data/events.parquet") %>%
+  events <- read_parquet("in/events.parquet") %>%
     as.data.table()
   
   events <- events %>%

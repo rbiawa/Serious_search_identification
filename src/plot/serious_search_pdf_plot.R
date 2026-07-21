@@ -1272,7 +1272,7 @@ gtsave(coeff_gt,
 
 retrieve_package("GGally")
 retrieve_package("forestmodel")
-retrieve_packages("effects")
+retrieve_package("effects")
 retrieve_package("ggeffects")
 
 
