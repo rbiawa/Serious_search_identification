@@ -88,7 +88,7 @@ To run this program you need to install the `R` language environment and the req
 3. Run `packages_loading.R` to install the required packages (this step is included in `main.R`; a minimal Internet connection is needed).
 
 ### Data
-You need to set up the files in folder `data`: `events.parquet`, `features.gpkg`, `mail_phone.parquet`, `geom_sf_cities.gpkg` and `geom_sf_departements.gpkg`. See the examples provided in folder `data`.
+You need to set up the files in folder `in`: `events.parquet`, `features.gpkg`, `mail_phone.parquet`, `geom_sf_cities.gpkg` and `geom_sf_departements.gpkg`. See the examples provided in folder `in`.
 
 
 ## Use
@@ -115,7 +115,7 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
 * `mail_phone.parquet`: a dataset (in parquet format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the dataset); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
 
 #### Processing
-  1. Copy your own `events.parquet`, `features.gpkg`, `geom_sf_cities.gpkg`, `geom_sf_departements.gpkg` and `mail_phone.parquet` in the `data` folder;
+  1. Copy your own `events.parquet`, `features.gpkg`, `geom_sf_cities.gpkg`, `geom_sf_departements.gpkg` and `mail_phone.parquet` in the `in` folder;
   2. Run the `main.R` script using `source("main.R")`. 
 
 ### To Perform Only the Serious Search Identification
@@ -130,13 +130,13 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
 * `mail_phone.parquet`: **only if the contact data are available.** This file contains contact indicators (in parquet format). Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the dataset); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
 
 #### Processing
-1. Copy your own `events.parquet`, `features.gpkg`, `geom_sf_cities.gpkg`, `geom_sf_departements.gpkg`, and possibly `mail_phone.parquet` in the `data` folder;
+1. Copy your own `events.parquet`, `features.gpkg`, `geom_sf_cities.gpkg`, `geom_sf_departements.gpkg`, and possibly `mail_phone.parquet` in the `in` folder;
 2.
    -If contact indicators are available and want to incorporate them in the process, run the `serious_search_through_revisit_along_with_contact_indicators.R` script using `source("serious_search_through_revisit_along_with_contact_indicators.R")`.
   - If contact indicators are not available, run the `serious_search_through_revisit_without_contact_indicators.R` script using `source("serious_search_through_revisit_without_contact_indicators.R")`.
      
 #### Output
-The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet`. Serious search is identified through the column `is_serious`, which is a logical variable.
+The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet` for [parquet](https://en.wikipedia.org/wiki/Apache_Parquet format and `out/CSV/serious_search/serious_search_data.CSV` for [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format. Serious search is identified through the column `is_serious`, which is a logical variable.
 
 ## Dependencies
 
