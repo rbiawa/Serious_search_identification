@@ -147,156 +147,22 @@ The output of this processing is saved under `out/parquet/serious_search/serious
 
 
 ## References
-* **[Ab'24]** **Abella, D., Martínez, J. H., Mazzoli, M., Le Corre, T., Migozzi, J., Alonso-Paulí, E., Crespí-Cladera, R., Louail, T., & Ramasco, J. J.** (2024).  
-*Exploring the spatial segmentation of housing markets from online listings.*  
-DOI: https://doi.org/10.48550/arXiv.2405.08398
 
-* **[Ad'08]** **Adar, E., Teevan, J., & Dumais, S. T.** (2008).  
-*Large scale analysis of web revisitation patterns.*  
-Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, 1197–1206.  
-DOI: https://doi.org/10.1145/1357054.1357241
-
-* **[Bl'24]** **Blehaut, M., Coulondre, A., Juillard, C., Lasserre-Bigorry, V., & Vigouroux, S.** (2024).  
-*Demande et offre de logements à l’échelle locale en France.*  
-IDHEAL Report.  
-URL: https://idheal.fr/media/pages/etudes-actions/etudes/habiter-ou-pas/102bc9ed65-1732783356/idheal-habiter-ou-pas-rapport-vd.pdf
-
-* **[Bo'20]** **Boeing, G.** (2020).  
-*Online Rental Housing Market Representation and the Digital Reproduction of Urban Inequality.*  
-Environment and Planning A: Economy and Space, 52(2), 449–468.  
-DOI: https://doi.org/10.1177/0308518X19869678
-
-* **[Bo'21]** **Boeing, G., Besbris, M., Schachter, A., & Kuk, J.** (2021).  
-*Housing Search in the Age of Big Data: Smarter Cities or the Same Old Blind Spots?*  
-Housing Policy Debate, 31(1), 112–126.  
-DOI: https://doi.org/10.1080/10511482.2019.1684336
-
-* **[Bot'13]** **Botterill, J.** (2013).  
-*Property porn: An analysis of online real estate advertising.*  
-In *The Routledge Companion to Advertising and Promotional Culture*, 326–337.
-
-* **[Bro'16]** **Bronnenberg, B. J., Kim, J. B., & Mela, C. F.** (2016).  
-*Zooming in on choice: How do consumers search for cameras online?*  
-Marketing Science, 35(5), 693–712.
-
-* **[Bow'08]** **Brown, P., & Hincks, S.** (2008).  
-*A Framework for Housing Market Area Delineation: Principles and Application.*  
-Urban Studies, 45(11), 2225–2247.  
-DOI: https://doi.org/10.1177/0042098008095866
-
-* **[Ch'12]** **Chen, C., & Lin, H.** (2012).  
-*How far do people search for housing?*  
-Housing Studies, 27(7), 898–914.  
-DOI: https://doi.org/10.1080/02673037.2012.725827
-
-* **[Cl'12]** **Clark, W. A. V.** (2012).  
-*Housing Market Search.*  
-In *International Encyclopedia of Housing and Home*, Elsevier, 518–522.  
-DOI: https://doi.org/10.1016/B978-0-08-047163-1.00671-8
-
-* **[Cr'82]** **Cronin, F. J.** (1982).  
-*The Efficiency of Housing Search.*  
-Southern Economic Journal, 48(4), 1016–1030.  
-DOI: https://doi.org/10.2307/1058274
-
-* **[Cu'16]** **Cusin, F.** (2016).  
-*Y a-t-il un modèle de la ville française ? Structures urbaines et marchés immobiliers.*  
-Revue française de sociologie, 57(1), 97–129.  
-DOI: https://doi.org/10.3917/rfs.571.0097
-
-* **[Da'26]** **Dang, I. C., Ursu, R. M., & Chintagunta, P. K.** (2026).  
-*Going back to move forward? How search revisits on a website inform search outcomes.*  
-Quantitative Marketing and Economics, 24(1), 6.  
-DOI: https://doi.org/10.1007/s11129-025-09304-8
-
-* **[De'12]** **De Los Santos, B., Hortaçsu, A., & Wildenbeest, M. R.** (2012).  
-*Testing Models of Consumer Search Using Data on Web Browsing and Purchasing Behavior.*  
-American Economic Review, 102(6), 2955–2980.  
-DOI: https://doi.org/10.1257/aer.102.6.2955
 
 * **[Eu'26]** **Eurostat** (2026).  
 *NUTS — Nomenclature des unités territoriales statistiques: Principes.*  
 URL: https://ec.europa.eu/eurostat/fr/web/nuts/principles
-
-* **[Gu'82]** **Guigou, J. L.** (1982).  
-*Rente foncière et capacité de concurrence pour l’occupation du sol d’après William Alonso.*  
-In *La rente foncière*, Economica, 347–364.
-
-* **[He'20]** **Hess, C., Acolin, A., Walter, R., Kennedy, I., Chasins, S., & Crowder, K.** (2021).  
-*Searching for housing in the digital age.*  
-Environment and Planning A, 53(8), 2012–2032.  
-DOI: https://doi.org/10.1177/0308518X211034177
 
 * **[Hu'20]** **Hurlbert, S. H.** (1971).  
 *The nonconcept of species diversity.*  
 Ecology, 52(4), 577–586.  
 DOI: https://doi.org/10.2307/1934145
 
-* **[In'15]** **INSEE** (2015).  
-*L’aire urbaine de Lille : un rayonnement métropolitain.*  
-URL: https://www.insee.fr/fr/statistiques/1285565
-
-* **[Ke'17]** **Keskin, B., & Watkins, C. A.** (2017).  
-*Defining spatial housing submarkets.*  
-Urban Studies, 54(6), 1446–1462.  
-DOI: https://doi.org/10.1177/0042098015620351
-
-* **[Ki'92]** **Kim, S.** (1992).  
-*Search, hedonic prices and housing demand.*  
-Review of Economics and Statistics, 503–508.  
-DOI: https://doi.org/10.2307/2109495
-
-* **[Kr'18]** **Krysan, M., Crowder, K., Scott, M. M., & Hedman, C.** (2018).  
-*Racial and Ethnic Differences in Housing Search.*  
-HUD Report.  
-URL: https://www.huduser.gov/portal/sites/default/files/pdf/HousingSearch.pdf
-
-* **[L'15]** **Lefebvre, T.** (2015).  
-*Une nouvelle ère pour l’intermédiation en immobilier résidentiel.*  
-PhD Thesis, Université Paris Dauphine.
-
-* **[Lo'20]** **Loberto, M., Luciani, A., & Pangallo, M.** (2020).  
-*What do online listings tell us about the housing market?*  
-arXiv:2004.02706  
-URL: https://arxiv.org/abs/2004.02706
-
-* **[Ma'12]** **Maclennan, D., & O’Sullivan, A.** (2012).  
-*Housing markets, signals and search.*  
-Journal of Property Research, 29(4), 324–340.  
-DOI: https://doi.org/10.1080/09599916.2012.717102
-
-* **[Ma'82]** **MacLennan, D., & Wood, G.** (1982).  
-*Information acquisition: Patterns and strategies.*  
-In *Modelling Housing Market Search*, 134–159.
-
-* **[Ma'11]** **Marsh, A., & Gibb, K.** (2011).  
-*Uncertainty, expectations and behavioural aspects of housing market choices.*  
-Housing, Theory and Society, 28(3), 215–235.  
-DOI: https://doi.org/10.1080/14036096.2011.599182
-
-* **[Ma'80]** **McCarthy, K. F.** (1980).  
-*A three-stage model of housing search.*  
-Santa Monica, CA.  
-URL: https://apps.dtic.mil/sti/html/tr/ADA095091
-
 * **[Mc'77]** **McFadden, D.** (1977).  
 *Quantitative Methods for Analyzing Travel Behaviour of Individuals.*  
 Cowles Foundation Discussion Paper 707.  
 URL: https://elischolar.library.yale.edu/cowles-discussion-paper-series/707
 
-* **[Mc'11]** **McLaren, N., & Shanbhogue, R.** (2011).  
-*Using internet search data as economic indicators.*  
-Bank of England Quarterly Bulletin.  
-URL: https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=1865276
-
-* **[Mu'96]** **Mulder, C. H.** (1996).  
-*Housing choice: Assumptions and approaches.*  
-Netherlands Journal of Housing and the Built Environment, 11(3), 209–232.  
-DOI: https://doi.org/10.1007/BF02496589
-
-* **[Mu'69]** **Muth, R.** (1969).  
-*Cities and Housing; The Spatial Pattern of Urban Residential Land Use.*  
-University of Chicago Press.
 
 * **[Ok'24]** **Oksanen, J., et al.** (2024).  
 *vegan: Community Ecology Package.*  
@@ -307,15 +173,6 @@ URL: https://CRAN.R-project.org/package=vegan
 *Analyse factorielle de données mixtes.*  
 Revue de statistique appliquée, 52(4), 93–111.
 
-* **[Pa'76]** **Palm, R.** (1976).  
-*Real estate agents and geographical information.*  
-Geographical Review, 66, 266–280.  
-URL: https://www.jstor.org/stable/213885
-
-* **[Pa'18]** **Pangallo, M., & Loberto, M.** (2018).  
-*Home is where the ad is: online interest proxies housing demand.*  
-EPJ Data Science, 7(1), 47.  
-DOI: https://doi.org/10.1140/epjds/s13688-018-0176-2
 
 * **[Pa'25]** **Pannu, A., & El-Saeiti, I. N.** (2025).  
 *valuating predictive accuracy and model selection in logistic regression: a
@@ -323,25 +180,7 @@ statistical approach using sensitivity, specificity, and ROC analysis.*
 International Journal of Management, 16(1).  
 DOI: https://doi.org/10.34218/IJM_16_01_002
 
-* **[Pi'20]** **Piazzesi, M., Schneider, M., & Stroebel, J.** (2020).  
-*Segmented housing search.*  
-American Economic Review, 110(3), 720–759.  
-DOI: https://doi.org/10.1257/aer.20141772
 
-* **[Ra'14]** **Rae, A.** (2014).  
-*Online housing search and the geography of submarkets.*  
-Housing Studies, 30(3), 453–472.  
-DOI: https://doi.org/10.1080/02673037.2014.974142
-
-* **[Ra'16]** **Rae, A., & Sener, E.** (2016).  
-*How website users segment a city.*  
-Cities, 52, 140–147.  
-DOI: https://doi.org/10.1080/02673037.2014.974142
-
-* **[Ra'53]** **Rapkin, C.** (1953).  
-*Housing market analysis: a study of theory and methods.*  
-Housing and Home Finance Agency.  
-URL: https://books.google.fr/books?id=ZxH1wSUgCAQC
 
 * **[Ro'87]** **Rousseeuw, P. J.** (1987).  
 *Silhouettes: a graphical aid to the interpretation and validation of cluster analysis.*  
@@ -353,34 +192,6 @@ DOI: https://doi.org/10.1016/0377-0427(87)90125-7
 Nature, 163(4148), 688.  
 DOI: https://doi.org/10.1038/163688a0
 
-* **[St'19]** **Steegmans, J., & de Bruin, J.** (2019).  
-*Online housing search and gravity models.*  
-USE Working Paper Series 19.17.
-
-* **[St'21]** **Steegmans, J., & de Bruin, J.** (2021).  
-*Online housing search: A gravity model approach.*  
-PLoS One, 16(3), e0247712.  
-DOI: https://doi.org/10.1371/journal.pone.0247712
-
-* **[Th'25]** **The Media Leader** (2025).  
-*4 Français sur 10 ont visité les sites et applications d’immobilier en avril selon Médiamétrie.*  
-URL: https://fr.themedialeader.com/4-francais-sur-10-ont-visite-les-sites-et-applications-dimmobilier-en-avril-selon-mediametrie/
-
-* **[va'21]** **van der Lijn, C.** (2021).  
-*nderstanding spatial housing choice and demand: A comparative study of London,
-Liverpool, and Sheffiel.*  
-PhD Thesis, University of Sheffield.  
-URL: https://etheses.whiterose.ac.uk/id/eprint/28972/
-
-* **[Ve'16]** **Veldhuizen, S. V., Vogt, B., & Voogt, B.** (2016).  
-*Internet searches and transactions on the Dutch housing market.*  
-Applied Economics Letters, 23(18), 1321–1324.  
-DOI: https://doi.org/10.1080/13504851.2016.1153785
-
-* **[Wa'01]** **Watkins, C. A.** (2001).  
-*The definition and identification of housing submarkets.*  
-Environment and Planning A, 33(12), 2235–2253.  
-DOI: https://doi.org/10.1068/a34162
 
 * **[Zo'07]** **Zou, K. H., O’Malley, A. J., & Mauri, L.** (2007).  
 *Receiver-operating characteristic analysis for evaluating diagnostic tests and predictive models.*  
