@@ -53,7 +53,9 @@ If you use this source code, please cite article:
   - `pdf`: pdf files with the plots of the processing.
   - `Rdata`: Rdata files containing `R`objects such as dataframes.
   - `svg`: svg files with the plots of the processing.
-  - `tex`: tex files (output in Latex format).
+  - `tex`: tex files (output in [Latex](https://fr.wikipedia.org/wiki/LaTeX) format) with the tables produced by the processing and provided in the document.
+  - `parquet`: forlder containing output datasets (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet. For example, the output dataset of 'Serious and non serious users'.
+  - `CSV`: forlder containing output datasets in [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format.
 - `src`: folder containing the source code.
   - `plot`: folder containing `R` scripts for plots.
     - `map_plot.R`: `R` script to plot Online search intensity by city.
@@ -65,9 +67,9 @@ If you use this source code, please cite article:
     - `contact_indicators.R`: `R`script to compute contact indicators.
     - `revisit_contact_temporality.R`: `R`script to analyze behavioural temporality between Revist and Contact.
     - `revisit_contact_temporality.R`: `R`script to analyze the revisiting temporality.
-    - `serious_search_through_revisit.R`: `R`script to compute listings' revisit indicators and search variability           indicators.
-    - `serious_search_through_revisit_analysis.R`: `R`script to analyze search engagement through listings'                     revisit indicators and search variability indicators.
-    - `serious_search_through_revisit_sample_analysis.R` : `R`script to analyze search engagement through listings'              revisit indicators and search variability indicators on a sample of the online searchers.
+    - `serious_search_through_revisit.R`: `R`script to compute listings' revisit indicators and search variability indicators.
+    - `serious_search_through_revisit_analysis.R`: `R`script to analyze search engagement through listings' revisit indicators and search variability indicators.
+    - `serious_search_through_revisit_sample_analysis.R` : `R`script to analyze search engagement through listings' revisit indicators and search variability indicators on a sample of the online searchers.
   - `create_directories.R` : `R` scripts to create directories.
   - `load_data.R`: `R` script to load data.
   - `packages_loading.R` : `R` script to install (if not ye installed) and load the packages used in this work, along with customer functions.
