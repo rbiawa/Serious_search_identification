@@ -29,8 +29,6 @@ retrieve_package <- function(package_name) {
     # Try installing the package
     install.packages(
       package_name,
-      repos = "https://cloud.r-project.org",
-      type = "source",
       dependencies = TRUE,
       verbose = FALSE
     )

@@ -230,7 +230,7 @@ if (interactive()) {
 
 
 res.HCPC_sample <- HCPC(res.PCA_sample,
-                 #        nb.clust=3,
+                         nb.clust=3,
                  consol=FALSE,
                  graph=FALSE)
 

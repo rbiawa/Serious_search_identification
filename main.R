@@ -80,20 +80,6 @@ source("src/serious_search/serious_search_through_revisit_analysis.R")
 
 source("src/serious_search/serious_search_through_revisit_sample_analysis.R")
 
-#===========================================
-# Behavioural Temporality: Revist vs Contact
-#===========================================
-
-source("src/serious_search/revisit_contact_temporality.R")
-
-
-#===========================================
-# Analyze the revisiting temporality
-#===========================================
-
-source("src/serious_search/revisit_time_analysis.R")
-
-
 
 #==============================
 # Plot serious search graphics
@@ -106,13 +92,28 @@ source("src/plot/serious_search_pdf_plot.R")
 # Plot serious search clustering graphics on a sample
 #====================================================
 
-# source("src/plot/sample_search_cluster_plot.R")
+source("src/plot/sample_search_cluster_plot.R")
 
 #================================= 
 # Export tables into latex format
 #================================= 
 
-# source("src/plot/save_tables.R")
+source("src/plot/save_tables.R")
+
+
+
+#===========================================
+# Behavioural Temporality: Revist vs Contact
+#===========================================
+
+source("src/serious_search/revisit_contact_temporality.R")
+
+
+#===========================================
+# Analyze the revisiting temporality
+#===========================================
+
+source("src/serious_search/revisit_time_analysis.R")
 
 
 

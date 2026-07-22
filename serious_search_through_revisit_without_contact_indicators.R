@@ -22,6 +22,9 @@ dir.create("out/parquet/serious_search",
            recursive = TRUE, showWarnings = FALSE)
 
 
+dir.create("out/CSV/serious_search", 
+           recursive = TRUE, showWarnings = FALSE)
+
 #=========================
 # Laod packages
 #=========================
@@ -334,7 +337,7 @@ ev_revisit <- check_connectivity(ev_revisit
       
       
       # Subregion diversity
-      dep_simpson = simpson.unb(table(subregion)),
+      dep_simpson = simpson.unb(table(dep_ID)),
       
       
       
@@ -375,8 +378,18 @@ serious_search_data <- visitor_stats %>%
   )
 
 
+
+#===========================
+# Save output dataset
+#===========================
+
 arrow::write_parquet(serious_search_data, 
                      "out/parquet/serious_search/serious_search_data.parquet")
+
+
+
+write.csv(serious_search_data, 
+          "out/CSV/serious_search/serious_search_data.CSV")
 
 
 #===========================
