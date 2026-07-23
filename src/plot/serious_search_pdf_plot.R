@@ -6,8 +6,7 @@
 # source("src/plot/serious_search_pdf_plot.R")
 ################################################################################
 
-if(!require("patchwork")) install.packages("patchwork"); library(patchwork)
-if(!require("xtable")) install.packages("xtable"); library(xtable)
+
 
 #=======================
 # Plot parameters
@@ -159,7 +158,6 @@ print(
   ),
   include.rownames = TRUE,
   booktabs = TRUE
-  
 )
 
 sink("out/tex/serious_search/univariate_analysis/search_categories.tex")
@@ -272,7 +270,6 @@ sink()
 #
 #=====================================
 
-retrieve_package("stringr")
 
 col_contact <- c(my_red, my_blue)
 col_revisit <- c("tomato3", "turquoise")
@@ -1210,11 +1207,6 @@ if(exists("res.HCPC_sample")) {
 #===============================
 
 
-retrieve_package("gtsummary")
-retrieve_package("gt")
-retrieve_package("webshot2")
-
-
 perform_logit_linearity <- FALSE
 
 dir.create("out/pdf/serious_search/contact_regression",
@@ -1242,7 +1234,6 @@ if(perform_logit_linearity) {
 
 odds.ratio(contact_model)
 
-#library(broom)
 
 #tidy(contact_model, conf.int = TRUE, exponentiate = TRUE)
 
@@ -1270,10 +1261,7 @@ gtsave(coeff_gt,
 # Effect graphics
 #==========================
 
-retrieve_package("GGally")
-retrieve_package("forestmodel")
-retrieve_package("effects")
-retrieve_package("ggeffects")
+
 
 
 pdf("out/pdf/serious_search/contact_regression/odds_ratios_plot.pdf", width = 8, height = 5)
@@ -1313,6 +1301,20 @@ dev.off()
 # Mail form model
 #
 #===============================
+
+
+
+coeff <- tbl_regression(mail_form_model, exponentiate = TRUE)
+
+
+coeff_gt <- as_gt(coeff)
+
+gtsave(coeff_gt, 
+       filename = "out/pdf/serious_search/mail_form_regression/mail_form__model_coeff.png")
+
+
+gtsave(coeff_gt, 
+       filename = "out/pdf/serious_search/mail_form_regression/mail_form__model_coeff.html")
 
 
 

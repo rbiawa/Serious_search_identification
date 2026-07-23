@@ -6,7 +6,6 @@
 # source("src/serious_search/revisit_time_analysis.R")
 ################################################################################
 
-retrieve_package("xtable")
 
 plot_num_var <- function(var) {
   

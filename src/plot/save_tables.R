@@ -8,8 +8,6 @@
 
 
 
-library(knitr)
-
 kable(summary_stats, format = "latex", booktabs = TRUE)
 
 # code to put in overleaf
@@ -32,11 +30,8 @@ print(xtable(summary_stats),
 
 # An enhanced table
 
-library(gt)
+retrieve_package("gt")
 
-if(interactive()) ?gt::gt()
-
-library(gt)
 
 summary_stats %>%
   gt() %>%

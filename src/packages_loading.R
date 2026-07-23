@@ -70,13 +70,13 @@ retrieve_package("stringr")
 retrieve_package("questionr")
 retrieve_package("readr")
 retrieve_package("ggplot2")
-retrieve_package("readxl")
-retrieve_package("writexl")
+#retrieve_package("readxl")
+#retrieve_package("writexl")
 retrieve_package("rlang")
 retrieve_package("stats")
 retrieve_package("skimr")
 retrieve_package("entropy") # For entropy computation
-retrieve_package("car") # To be checked on the server (not installing)
+retrieve_package("car") # 
 retrieve_package("corrplot")
 
 
@@ -155,14 +155,14 @@ retrieve_package("ggdendro")
 retrieve_package("distances")  # for big matrices
 retrieve_package("fpc")        # for Big data AHC
 retrieve_package("ggfortify")  # For Biplot (PCA variable + individuals) plot
-retrieve_package("plotly")     # for interactive plots
 retrieve_package("GGally")     # for Scatterplot matrix (2D)
 retrieve_package("factoextra") # for PCA analysis and visualization
 
 retrieve_package("gridExtra")   # for images combination with ggarrange
 library(grid)                   #is a R base package (no install)
 
-
+retrieve_package("patchwork")
+retrieve_package("gt")
 
 
 #=========================== 
@@ -172,6 +172,25 @@ library(grid)                   #is a R base package (no install)
 retrieve_package("NbClust")
 retrieve_package("clusterCrit")
 
+
+#=========================== 
+# Logistic regression
+#===========================
+
+
+retrieve_package("gtsummary")
+retrieve_package("webshot2")
+
+
+retrieve_package("GGally")
+retrieve_package("forestmodel")
+retrieve_package("effects")
+retrieve_package("ggeffects")
+
+#=========================
+# To print tables in .tex
+#=========================
+retrieve_package("xtable")
 
 
 #=====================================
