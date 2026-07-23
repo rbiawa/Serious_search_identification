@@ -141,7 +141,7 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
   - If contact indicators are not available, run the `serious_search_through_revisit_without_contact_indicators.R` script using `source("serious_search_through_revisit_without_contact_indicators.R")`.
      
 #### Output
-The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet` for [parquet](https://en.wikipedia.org/wiki/Apache_Parquet format and `out/CSV/serious_search/serious_search_data.CSV` for [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format. Serious search is identified through the column `is_serious`, which is a logical variable.
+The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet` for [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) format and `out/CSV/serious_search/serious_search_data.CSV` for [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format. Serious search is identified through the column `is_serious`, which is a logical variable.
 
 ## Dependencies
 
