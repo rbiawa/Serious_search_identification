@@ -36,7 +36,7 @@ If you use this source code, please cite article:
 - [Organization](#organization)
 - [Installation](#installation)
 - [Use](#use)
-- [Software information](#software-information)
+- [Dependencies](#dependencies)
 - [References](#references)
 
 ------------------------------------------------------------------------
@@ -143,7 +143,7 @@ First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parq
 #### Output
 The output of this processing is saved under `out/parquet/serious_search/serious_search_data.parquet` for [parquet](https://en.wikipedia.org/wiki/Apache_Parquet format and `out/CSV/serious_search/serious_search_data.CSV` for [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format. Serious search is identified through the column `is_serious`, which is a logical variable.
 
-## Software information
+## Dependencies
 
 
 ```{r}
