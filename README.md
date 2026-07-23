@@ -16,7 +16,7 @@ This repository contains the R code used to process the data, generate all resul
 A link to the document will be added if it is published.
 
 The scripts provide a complete workflow for behavioral feature construction, analysis, and visualization.  
-They can also be applied to custom datasets to identify user behaviors that may be interpreted as *serious search* within housing-related user‑generated data.
+They can also be applied to custom data sets to identify user behaviors that may be interpreted as *serious search* within housing-related user‑generated data.
 
 
 ------------------------------------------------------------------------
@@ -44,9 +44,9 @@ If you use this source code, please cite article:
 ## Organization
 
 - `in`: folder containing all the input data files.
-  - `events.parquet`: dataset  (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) format) of listings viewed by online searchers. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view);  `visitid` (view ID in the dataset);  `is_logged` (indication of wether the user was logged while viewing the listing).
-  - `features.parquet`: dataset (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) of every single listings' features. This table contains colums : `id_listing` (listing ID); `price` (property price); `area` (property area); `room_count` (property room count); `fct_room_count` (property room count set to factor variable); `sqm_price` (property square meter price); `item_type` (property type, wether a house or appartment);
-  - `mail_phone.parquet`: a dataset (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the dataset); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
+  - `events.parquet`: data set  (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) format) of listings viewed by online searchers. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view);  `visitid` (view ID in the data set);  `is_logged` (indication of wether the user was logged while viewing the listing).
+  - `features.parquet`: data set (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) of every single listings' features. This table contains colums : `id_listing` (listing ID); `price` (property price); `area` (property area); `room_count` (property room count); `fct_room_count` (property room count set to factor variable); `sqm_price` (property square meter price); `item_type` (property type, wether a house or appartment);
+  - `mail_phone.parquet`: a data set (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet) format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the data set); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
   - `geom_sf_cities.gpkg`: a file (in [GeoPackage](https://en.wikipedia.org/wiki/GeoPackage) format) containing cities' limits.
   - `geom_sf_departements.gpkg`: a file (in [GeoPackage](https://en.wikipedia.org/wiki/GeoPackage) format) containing departements' limits. In the French context, departments correspond to the NUTS 3 level of the EU territorial classification system, which is an administrative unit with populations ranging from 150,000 to 800,000 inhabitants [[Eu'26](#references)].
 - `out`: folder containing the outputs of the processing.
@@ -54,8 +54,8 @@ If you use this source code, please cite article:
   - `Rdata`: Rdata files containing `R`objects such as dataframes.
   - `svg`: svg files with the plots of the processing.
   - `tex`: tex files (output in [Latex](https://fr.wikipedia.org/wiki/LaTeX) format) with the tables produced by the processing and provided in the document.
-  - `parquet`: forlder containing output datasets (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet). For example, the output dataset of 'Serious and non serious users'.
-  - `CSV`: forlder containing output datasets in [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format.
+  - `parquet`: forlder containing output data sets (in [parquet](https://en.wikipedia.org/wiki/Apache_Parquet). For example, the output data set of 'Serious and non serious users'.
+  - `CSV`: forlder containing output data sets in [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values) format.
 - `src`: folder containing the source code.
   - `plot`: folder containing `R` scripts for plots.
     - `map_plot.R`: `R` script to plot Online search intensity by city.
@@ -96,11 +96,11 @@ You need to set up the files in folder `in`: `events.parquet`, `features.gpkg`, 
 ### To Replicate the Paper Experiments
 
 #### Data Preparation
-Unfortunately, we are not allowed to publish the data used in this paper. However, we provide a small fictional dataset designed to test the program and reproduce experiments similar to those presented in our paper (see folder `in`). 
+Unfortunately, we are not allowed to publish the data used in this paper. However, we provide a small fictional data set designed to test the program and reproduce experiments similar to those presented in our paper (see folder `in`). 
 
 
 #### Processing
-Once the dataset is ready, do the following to apply the process described in the paper to these data: Run the `main.R` script using `source("main.R")`.
+Once the data set is ready, do the following to apply the process described in the paper to these data: Run the `main.R` script using `source("main.R")`.
 
 **Note** : [Rstudio](https://docs.posit.co/ide/user/)  user may first run `Serious_search_identification.Rproj` file to work under the project. For example, this will automatically set the working directory. But this is not necessary.
 
@@ -110,9 +110,9 @@ Once the dataset is ready, do the following to apply the process described in th
 #### Data Preparation
 First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parquet` `geom_sf_cities.gpkg` and `geom_sf_departements.gpkg`:
 
-* `events.parquet`: dataset  (in parquet format) of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view);  `visitid` (view ID in the dataset);  `is_logged` (indication of wether the user was logged while viewing the listing).
-* `features.gpkg`: dataset (in gpkg format) of every single listings' features. This table contains colums : `id_listing` (listing ID); `price` (property price); `area` (property area); `room_count` (property room count); `fct_room_count` (property room count set to factor variable); `sqm_price` (property square meter price); `item_type` (property type, wether a house or appartment);
-* `mail_phone.parquet`: a dataset (in parquet format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the dataset); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
+* `events.parquet`: data set  (in parquet format) of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view);  `visitid` (view ID in the data set);  `is_logged` (indication of wether the user was logged while viewing the listing).
+* `features.gpkg`: data set (in gpkg format) of every single listings' features. This table contains colums : `id_listing` (listing ID); `price` (property price); `area` (property area); `room_count` (property room count); `fct_room_count` (property room count set to factor variable); `sqm_price` (property square meter price); `item_type` (property type, wether a house or appartment);
+* `mail_phone.parquet`: a data set (in parquet format) of contact indicators. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the data set); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
 * `geom_sf_cities.gpkg`: a file (in [GeoPackage](https://en.wikipedia.org/wiki/GeoPackage) format) containing cities' limits. This table contains clomuns : `city_ID` (city ID), `dep_ID` (department ID), `reg_ID` (region ID),  `geom` (city geometry) 
 * `geom_sf_departements.gpkg`: a file (in [GeoPackage](https://en.wikipedia.org/wiki/GeoPackage) format) containing departements' limits. This table contains clomuns :  `dep_ID` (department ID), `reg_ID` (region ID), `geom` (department geometry). 
 
@@ -127,9 +127,9 @@ The procedure is slightly different depending on whether contact data are availa
 ##### Data Preparation
 First, you need to set files `events.parquet`, `features.gpkg`, `mail_phone.parquet`, `geom_sf_cities.gpkg` and `geom_sf_departements.gpkg`:
   
-* `events.parquet`: dataset  (in parquet format) of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view);  `visitid` (view ID in the dataset); `is_logged` (indication of wether the user was logged while viewing the listing).
-* `features.gpkg`: dataset (in gpkg format) of every single listings' features. This table contains colums : `id_listing` (listing ID); `price` (property price); `area` (property area); `room_count` (property room count); `fct_room_count` (property room count set to factor variable); `sqm_price` (property square meter price); `item_type` (property type, wether a house or appartment);
-* `mail_phone.parquet`: **only if the contact data are available.** This file contains contact indicators (in parquet format). Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the dataset); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
+* `events.parquet`: data set  (in parquet format) of listings view by online searchers. Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view);  `visitid` (view ID in the data set); `is_logged` (indication of wether the user was logged while viewing the listing).
+* `features.gpkg`: data set (in gpkg format) of every single listings' features. This table contains colums : `id_listing` (listing ID); `price` (property price); `area` (property area); `room_count` (property room count); `fct_room_count` (property room count set to factor variable); `sqm_price` (property square meter price); `item_type` (property type, wether a house or appartment);
+* `mail_phone.parquet`: **only if the contact data are available.** This file contains contact indicators (in parquet format). Each line is a combination of a user with a listing. This table contains colums : `fullvisitorid` (user ID); `id_listing` (listing ID); `datetime` (date and time of view); `visitid` (view ID in the data set); `event_action` (indication of the contact action a user made : displaying a phone number or submiting a mail form); `is_logged` (indication of wether the user was logged while viewing the listing).
 * `geom_sf_cities.gpkg`: a file (in [GeoPackage](https://en.wikipedia.org/wiki/GeoPackage) format) containing cities' limits. This table contains clomuns : `city_ID` (city ID), `dep_ID` (department ID), `reg_ID` (region ID),  `geom` (city geometry) 
 * `geom_sf_departements.gpkg`: a file (in [GeoPackage](https://en.wikipedia.org/wiki/GeoPackage) format) containing departements' limits. This table contains clomuns :  `dep_ID` (department ID), `reg_ID` (region ID), `geom` (department geometry).
 
